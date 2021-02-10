@@ -1,44 +1,25 @@
-var mymap = L.map('mapid').setView([38.653343, -90.324783], 13);
+var map = L.map('map').setView([38.50,-90.324783], 11);
 
-
-L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+  // load a tile layer
+ L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	subdomains: 'abcd',
 	minZoom: 0,
 	maxZoom: 20,
 	ext: 'png'
-}).addTo(mymap);
+}).addTo(map);
 
-var marker1 = L.marker([51.5, -0.09]).addTo(mymap);
+var marker1 = L.marker([38.61889149138405, -90.19243382606129]).addTo(map);
+marker1.bindPopup("<b>Broadway Oyster Bar</b><br>736 S Broadway, St. Louis, MO 63102").openPopup();
 
-var marker2 = L.marker([51.525, -0.09]).addTo(mymap);
+var marker2 = L.marker([38.631491109439324, -90.1944409999229]).addTo(map);
+marker2.bindPopup("<b>Mizu Sushi Bar</b><br>1013 Washington Ave, St. Louis, MO 63101").openPopup();
 
-var circle = L.circle([51.508, -0.11], {
-    color: 'blue',
-    fillColor: '#f55',
-    fillOpacity: 0.85,
-    radius: 1000
-}).addTo(mymap);
+var marker3 = L.marker([38.62078137153155, -90.52426366148366]).addTo(map);
+marker3.bindPopup("<b>Circle 7 Ranch</b><br>14412 Clayton Rd, Ballwin, MO 63011").openPopup();
 
-var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(mymap);
+var marker4 = L.marker([38.59161824253797, -90.58393704103868]).addTo(map);
+marker4.bindPopup("<b>Pizzarelli's Pizzeria</b><br>15858 Manchester Rd, Ellisville, MO 63021").openPopup();
 
-marker1.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-marker2.bindPopup("<b>Hello world!</b><br>I am a popup, as well.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
-
-
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-}
-
-mymap.on('click', onMapClick);
+var marker5 = L.marker([38.680365186461174, -90.49820147215402]).addTo(map);
+marker5.bindPopup("<b>Kimcheese</b><br>13435 Olive Blvd, Chesterfield, MO 63017").openPopup();
