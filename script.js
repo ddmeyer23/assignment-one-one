@@ -1,4 +1,4 @@
-var mymap = L.map('mapid').setView([51.490, -0.09], 13);
+var mymap = L.map('mapid').setView([38.653343, -90.324783], 13);
 
 
 L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
